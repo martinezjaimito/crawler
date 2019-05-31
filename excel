@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+import pandas as pd
+
+# df = pd.read_excel(r'D:\PythonThree相关文档\爬取数据\she\20190516.xls')
+# data = df.iloc[:, 0].values
+#
+# sh = pd.read_excel(r'C:\Users\Python\Desktop\Untitled.xls')
+# cl = sh.iloc[:, 0].values
+# ne = []
+#
+# for j in range(0, len(data)):
+#     for i in range(0, len(cl)):
+#         if data[j] == cl[i]:
+#             x = sh.iloc[i].values
+#             ne.append(x)
+# n = pd.DataFrame(data=ne)
+# writer = pd.ExcelWriter(r'D:\PythonThree相关文档\爬取数据\she\sample.xls', index='false')
+# n.to_excel(writer, sheet_name='cx')
+# writer.save()
+
+df = pd.read_excel(r'D:\PythonThree相关文档\爬取数据\she\20190516.xls')
+data = df.iloc[:, 0].values
+
+sh = pd.read_excel(r'D:\PythonThree相关文档\爬取数据\she\报告统计\用户发推统计（所有推文）.csv.xls')
+cl = sh.iloc[:, 0].values
+ne = []
+
+for j in range(0, len(data)):
+    for i in range(0, len(cl)):
+        if data[j] == cl[i]:
+            x = sh.iloc[i,0].values + sh.iloc[i,4].values
+            ne.append(x)
+print(ne)
+# n = pd.DataFrame(data=ne)
+# writer = pd.ExcelWriter(r'D:\PythonThree相关文档\爬取数据\she\sample.xls', index='false')
+# n.to_excel(writer, sheet_name='cx')
+# writer.save()
+
